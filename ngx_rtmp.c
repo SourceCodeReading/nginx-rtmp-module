@@ -56,7 +56,12 @@ static ngx_command_t  ngx_rtmp_commands[] = {
       ngx_null_command
 };
 
-
+//./src/core/ngx_conf_file.h
+//typedef struct { 
+//    ngx_str_t     name; 
+//    void       *(*create_conf)(ngx_cycle_t *cycle);                /* 创建模块配置结构体 */ 
+//    char       *(*init_conf)(ngx_cycle_t *cycle, void *conf);    /* 配置选项解析后的处理 */ 
+//} ngx_core_module_t; 
 static ngx_core_module_t  ngx_rtmp_module_ctx = {
     ngx_string("rtmp"),
     NULL,
@@ -101,8 +106,57 @@ ngx_rtmp_block(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
     *(ngx_rtmp_conf_ctx_t **) conf = ctx;
 
     /* count the number of the rtmp modules and set up their indices */
-
-    ngx_rtmp_max_module = 0;
+//	struct ngx_module_s {
+//		ngx_uint_t            ctx_index；    
+//		/*分类的模块计数器
+//		nginx模块可以分为四种：core、event、http和mail
+//		每个模块都会各自计数，ctx_index就是每个模块在其所属类组的计数*/
+//		
+//		ngx_uint_t            index;        
+//		/*一个模块计数器，按照每个模块在ngx_modules[]数组中的声明顺序，从0开始依次给每个模块赋值*/
+//		
+//		ngx_uint_t            spare0;
+//		ngx_uint_t            spare1;
+//		ngx_uint_t            spare2;
+//		ngx_uint_t            spare3;
+//		
+//		ngx_uint_t            version;      //nginx模块版本
+//		
+//		void                 *ctx;          
+//		/*模块的上下文，不同种类的模块有不同的上下文，因此实现了四种结构体*/
+//		
+//		ngx_command_t        *commands;
+//		/*命令定义地址
+//		模块的指令集
+//		每一个指令在源码中对应着一个ngx_command_t结构变量*/
+//		
+//		ngx_uint_t            type;         //模块类型，用于区分core event http和mail
+//		
+//		ngx_int_t           (*init_master)(ngx_log_t *log);         //初始化master时执行
+//		
+//		ngx_int_t           (*init_module)(ngx_cycle_t *cycle);     //初始化module时执行
+//		
+//		ngx_int_t           (*init_process)(ngx_cycle_t *cycle);    //初始化process时执行
+//		ngx_int_t           (*init_thread)(ngx_cycle_t *cycle);     //初始化thread时执行
+//		void                (*exit_thread)(ngx_cycle_t *cycle);     //退出thread时执行
+//		void                (*exit_process)(ngx_cycle_t *cycle);    //退出process时执行
+//		
+//		void                (*exit_master)(ngx_cycle_t *cycle);     //退出master时执行
+//		
+////以下功能不明
+//		uintptr_t             spare_hook0;
+//		uintptr_t             spare_hook1;
+//		uintptr_t             spare_hook2;
+//		uintptr_t             spare_hook3;
+//		uintptr_t             spare_hook4;
+//		uintptr_t             spare_hook5;
+//		uintptr_t             spare_hook6;
+//		uintptr_t             spare_hook7;
+//	};
+//	
+//	typedef struct ngx_module_s      ngx_module_t;
+	
+	ngx_rtmp_max_module = 0;
     for (m = 0; ngx_modules[m]; m++) {
         if (ngx_modules[m]->type != NGX_RTMP_MODULE) {
             continue;
@@ -113,7 +167,7 @@ ngx_rtmp_block(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 
 
     /* the rtmp main_conf context, it is the same in the all rtmp contexts */
-
+	/* ngx_rtmp_max_module个 ctx->main_conf */
     ctx->main_conf = ngx_pcalloc(cf->pool,
                                  sizeof(void *) * ngx_rtmp_max_module);
     if (ctx->main_conf == NULL) {
@@ -124,6 +178,7 @@ ngx_rtmp_block(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
     /*
      * the rtmp null srv_conf context, it is used to merge
      * the server{}s' srv_conf's
+	 * ngx_rtmp_max_module 个 svr_conf s
      */
 
     ctx->srv_conf = ngx_pcalloc(cf->pool, sizeof(void *) * ngx_rtmp_max_module);
@@ -147,7 +202,10 @@ ngx_rtmp_block(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
      * create the main_conf's, the null srv_conf's, and the null app_conf's
      * of the all rtmp modules
      */
-
+	/**
+	 * ngx_rtmp_module 是一个核心模块,其子模块类型均是NGX_RTMP_MODULE
+	 * 这里对子模块的配置块进行初始化
+	 */
     for (m = 0; ngx_modules[m]; m++) {
         if (ngx_modules[m]->type != NGX_RTMP_MODULE) {
             continue;
@@ -192,13 +250,16 @@ ngx_rtmp_block(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
             if (module->preconfiguration(cf) != NGX_OK) {
                 return NGX_CONF_ERROR;
             }
+            
         }
     }
 
     /* parse inside the rtmp{} block */
-
+    /* cf 的内容?? */
     cf->module_type = NGX_RTMP_MODULE;
     cf->cmd_type = NGX_RTMP_MAIN_CONF;
+	
+	/*分析配置文件内容 string 2 memory objects*/
     rv = ngx_conf_parse(cf, NULL);
 
     if (rv != NGX_CONF_OK) {
@@ -209,9 +270,11 @@ ngx_rtmp_block(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 
     /* init rtmp{} main_conf's, merge the server{}s' srv_conf's */
 
+	/* ngx_rtmp_core_module 的 main 和 server  上线文*/
     cmcf = ctx->main_conf[ngx_rtmp_core_module.ctx_index];
     cscfp = cmcf->servers.elts;
-
+	
+	
     for (m = 0; ngx_modules[m]; m++) {
         if (ngx_modules[m]->type != NGX_RTMP_MODULE) {
             continue;

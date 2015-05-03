@@ -6,10 +6,121 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXFileReference section */
+		5A5220301AF25C75003E7643 /* AUTHORS */ = {isa = PBXFileReference; lastKnownFileType = text; name = AUTHORS; path = ../AUTHORS; sourceTree = "<group>"; };
+		5A5220311AF25C75003E7643 /* config */ = {isa = PBXFileReference; lastKnownFileType = text; name = config; path = ../config; sourceTree = "<group>"; };
+		5A5220321AF25C75003E7643 /* dash */ = {isa = PBXFileReference; lastKnownFileType = folder; name = dash; path = ../dash; sourceTree = "<group>"; };
+		5A5220331AF25C76003E7643 /* doc */ = {isa = PBXFileReference; lastKnownFileType = folder; name = doc; path = ../doc; sourceTree = "<group>"; };
+		5A5220341AF25C76003E7643 /* hls */ = {isa = PBXFileReference; lastKnownFileType = folder; name = hls; path = ../hls; sourceTree = "<group>"; };
+		5A5220351AF25C76003E7643 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		5A5220361AF25C87003E7643 /* ngx_rtmp_access_module.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_access_module.c; path = ../ngx_rtmp_access_module.c; sourceTree = "<group>"; };
+		5A5220371AF25C87003E7643 /* ngx_rtmp_amf.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_amf.c; path = ../ngx_rtmp_amf.c; sourceTree = "<group>"; };
+		5A5220381AF25C87003E7643 /* ngx_rtmp_amf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ngx_rtmp_amf.h; path = ../ngx_rtmp_amf.h; sourceTree = "<group>"; };
+		5A5220391AF25C87003E7643 /* ngx_rtmp_auto_push_module.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_auto_push_module.c; path = ../ngx_rtmp_auto_push_module.c; sourceTree = "<group>"; };
+		5A52203A1AF25C87003E7643 /* ngx_rtmp_bandwidth.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_bandwidth.c; path = ../ngx_rtmp_bandwidth.c; sourceTree = "<group>"; };
+		5A52203B1AF25C87003E7643 /* ngx_rtmp_bandwidth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ngx_rtmp_bandwidth.h; path = ../ngx_rtmp_bandwidth.h; sourceTree = "<group>"; };
+		5A52203C1AF25C87003E7643 /* ngx_rtmp_bitop.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_bitop.c; path = ../ngx_rtmp_bitop.c; sourceTree = "<group>"; };
+		5A52203D1AF25C87003E7643 /* ngx_rtmp_bitop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ngx_rtmp_bitop.h; path = ../ngx_rtmp_bitop.h; sourceTree = "<group>"; };
+		5A52203E1AF25C87003E7643 /* ngx_rtmp_cmd_module.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_cmd_module.c; path = ../ngx_rtmp_cmd_module.c; sourceTree = "<group>"; };
+		5A52203F1AF25C87003E7643 /* ngx_rtmp_cmd_module.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ngx_rtmp_cmd_module.h; path = ../ngx_rtmp_cmd_module.h; sourceTree = "<group>"; };
+		5A5220401AF25C87003E7643 /* ngx_rtmp_codec_module.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_codec_module.c; path = ../ngx_rtmp_codec_module.c; sourceTree = "<group>"; };
+		5A5220411AF25C87003E7643 /* ngx_rtmp_codec_module.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ngx_rtmp_codec_module.h; path = ../ngx_rtmp_codec_module.h; sourceTree = "<group>"; };
+		5A5220421AF25C87003E7643 /* ngx_rtmp_control_module.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_control_module.c; path = ../ngx_rtmp_control_module.c; sourceTree = "<group>"; };
+		5A5220431AF25C87003E7643 /* ngx_rtmp_core_module.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_core_module.c; path = ../ngx_rtmp_core_module.c; sourceTree = "<group>"; };
+		5A5220441AF25C87003E7643 /* ngx_rtmp_eval.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_eval.c; path = ../ngx_rtmp_eval.c; sourceTree = "<group>"; };
+		5A5220451AF25C87003E7643 /* ngx_rtmp_eval.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ngx_rtmp_eval.h; path = ../ngx_rtmp_eval.h; sourceTree = "<group>"; };
+		5A5220461AF25C87003E7643 /* ngx_rtmp_exec_module.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_exec_module.c; path = ../ngx_rtmp_exec_module.c; sourceTree = "<group>"; };
+		5A5220471AF25C87003E7643 /* ngx_rtmp_flv_module.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_flv_module.c; path = ../ngx_rtmp_flv_module.c; sourceTree = "<group>"; };
+		5A5220481AF25C87003E7643 /* ngx_rtmp_handler.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_handler.c; path = ../ngx_rtmp_handler.c; sourceTree = "<group>"; };
+		5A5220491AF25C87003E7643 /* ngx_rtmp_handshake.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_handshake.c; path = ../ngx_rtmp_handshake.c; sourceTree = "<group>"; };
+		5A52204A1AF25C87003E7643 /* ngx_rtmp_init.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_init.c; path = ../ngx_rtmp_init.c; sourceTree = "<group>"; };
+		5A52204B1AF25C87003E7643 /* ngx_rtmp_limit_module.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_limit_module.c; path = ../ngx_rtmp_limit_module.c; sourceTree = "<group>"; };
+		5A52204C1AF25C87003E7643 /* ngx_rtmp_live_module.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_live_module.c; path = ../ngx_rtmp_live_module.c; sourceTree = "<group>"; };
+		5A52204D1AF25C87003E7643 /* ngx_rtmp_live_module.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ngx_rtmp_live_module.h; path = ../ngx_rtmp_live_module.h; sourceTree = "<group>"; };
+		5A52204E1AF25C87003E7643 /* ngx_rtmp_log_module.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_log_module.c; path = ../ngx_rtmp_log_module.c; sourceTree = "<group>"; };
+		5A52204F1AF25C87003E7643 /* ngx_rtmp_mp4_module.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_mp4_module.c; path = ../ngx_rtmp_mp4_module.c; sourceTree = "<group>"; };
+		5A5220501AF25C87003E7643 /* ngx_rtmp_netcall_module.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_netcall_module.c; path = ../ngx_rtmp_netcall_module.c; sourceTree = "<group>"; };
+		5A5220511AF25C87003E7643 /* ngx_rtmp_netcall_module.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ngx_rtmp_netcall_module.h; path = ../ngx_rtmp_netcall_module.h; sourceTree = "<group>"; };
+		5A5220521AF25C87003E7643 /* ngx_rtmp_notify_module.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_notify_module.c; path = ../ngx_rtmp_notify_module.c; sourceTree = "<group>"; };
+		5A5220531AF25C87003E7643 /* ngx_rtmp_play_module.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_play_module.c; path = ../ngx_rtmp_play_module.c; sourceTree = "<group>"; };
+		5A5220541AF25C87003E7643 /* ngx_rtmp_play_module.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ngx_rtmp_play_module.h; path = ../ngx_rtmp_play_module.h; sourceTree = "<group>"; };
+		5A5220551AF25C87003E7643 /* ngx_rtmp_proxy_protocol.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_proxy_protocol.c; path = ../ngx_rtmp_proxy_protocol.c; sourceTree = "<group>"; };
+		5A5220561AF25C87003E7643 /* ngx_rtmp_proxy_protocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ngx_rtmp_proxy_protocol.h; path = ../ngx_rtmp_proxy_protocol.h; sourceTree = "<group>"; };
+		5A5220571AF25C87003E7643 /* ngx_rtmp_receive.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_receive.c; path = ../ngx_rtmp_receive.c; sourceTree = "<group>"; };
+		5A5220581AF25C87003E7643 /* ngx_rtmp_record_module.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_record_module.c; path = ../ngx_rtmp_record_module.c; sourceTree = "<group>"; };
+		5A5220591AF25C87003E7643 /* ngx_rtmp_record_module.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ngx_rtmp_record_module.h; path = ../ngx_rtmp_record_module.h; sourceTree = "<group>"; };
+		5A52205A1AF25C87003E7643 /* ngx_rtmp_relay_module.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_relay_module.c; path = ../ngx_rtmp_relay_module.c; sourceTree = "<group>"; };
+		5A52205B1AF25C87003E7643 /* ngx_rtmp_relay_module.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ngx_rtmp_relay_module.h; path = ../ngx_rtmp_relay_module.h; sourceTree = "<group>"; };
+		5A52205C1AF25C87003E7643 /* ngx_rtmp_send.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_send.c; path = ../ngx_rtmp_send.c; sourceTree = "<group>"; };
+		5A52205D1AF25C87003E7643 /* ngx_rtmp_shared.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_shared.c; path = ../ngx_rtmp_shared.c; sourceTree = "<group>"; };
+		5A52205E1AF25C87003E7643 /* ngx_rtmp_stat_module.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp_stat_module.c; path = ../ngx_rtmp_stat_module.c; sourceTree = "<group>"; };
+		5A52205F1AF25C87003E7643 /* ngx_rtmp_streams.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ngx_rtmp_streams.h; path = ../ngx_rtmp_streams.h; sourceTree = "<group>"; };
+		5A5220601AF25C87003E7643 /* ngx_rtmp_version.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ngx_rtmp_version.h; path = ../ngx_rtmp_version.h; sourceTree = "<group>"; };
+		5A5220611AF25C87003E7643 /* ngx_rtmp.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ngx_rtmp.c; path = ../ngx_rtmp.c; sourceTree = "<group>"; };
+		5A5220621AF25C87003E7643 /* ngx_rtmp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ngx_rtmp.h; path = ../ngx_rtmp.h; sourceTree = "<group>"; };
+		5A5220631AF25C87003E7643 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		5A5220641AF25C87003E7643 /* stat.xsl */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = stat.xsl; path = ../stat.xsl; sourceTree = "<group>"; };
+		5A5220651AF25C88003E7643 /* test */ = {isa = PBXFileReference; lastKnownFileType = folder; name = test; path = ../test; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		5A5220251AF25B8F003E7643 = {
 			isa = PBXGroup;
 			children = (
+				5A5220301AF25C75003E7643 /* AUTHORS */,
+				5A5220311AF25C75003E7643 /* config */,
+				5A5220321AF25C75003E7643 /* dash */,
+				5A5220331AF25C76003E7643 /* doc */,
+				5A5220341AF25C76003E7643 /* hls */,
+				5A5220351AF25C76003E7643 /* LICENSE */,
+				5A5220361AF25C87003E7643 /* ngx_rtmp_access_module.c */,
+				5A5220371AF25C87003E7643 /* ngx_rtmp_amf.c */,
+				5A5220381AF25C87003E7643 /* ngx_rtmp_amf.h */,
+				5A5220391AF25C87003E7643 /* ngx_rtmp_auto_push_module.c */,
+				5A52203A1AF25C87003E7643 /* ngx_rtmp_bandwidth.c */,
+				5A52203B1AF25C87003E7643 /* ngx_rtmp_bandwidth.h */,
+				5A52203C1AF25C87003E7643 /* ngx_rtmp_bitop.c */,
+				5A52203D1AF25C87003E7643 /* ngx_rtmp_bitop.h */,
+				5A52203E1AF25C87003E7643 /* ngx_rtmp_cmd_module.c */,
+				5A52203F1AF25C87003E7643 /* ngx_rtmp_cmd_module.h */,
+				5A5220401AF25C87003E7643 /* ngx_rtmp_codec_module.c */,
+				5A5220411AF25C87003E7643 /* ngx_rtmp_codec_module.h */,
+				5A5220421AF25C87003E7643 /* ngx_rtmp_control_module.c */,
+				5A5220431AF25C87003E7643 /* ngx_rtmp_core_module.c */,
+				5A5220441AF25C87003E7643 /* ngx_rtmp_eval.c */,
+				5A5220451AF25C87003E7643 /* ngx_rtmp_eval.h */,
+				5A5220461AF25C87003E7643 /* ngx_rtmp_exec_module.c */,
+				5A5220471AF25C87003E7643 /* ngx_rtmp_flv_module.c */,
+				5A5220481AF25C87003E7643 /* ngx_rtmp_handler.c */,
+				5A5220491AF25C87003E7643 /* ngx_rtmp_handshake.c */,
+				5A52204A1AF25C87003E7643 /* ngx_rtmp_init.c */,
+				5A52204B1AF25C87003E7643 /* ngx_rtmp_limit_module.c */,
+				5A52204C1AF25C87003E7643 /* ngx_rtmp_live_module.c */,
+				5A52204D1AF25C87003E7643 /* ngx_rtmp_live_module.h */,
+				5A52204E1AF25C87003E7643 /* ngx_rtmp_log_module.c */,
+				5A52204F1AF25C87003E7643 /* ngx_rtmp_mp4_module.c */,
+				5A5220501AF25C87003E7643 /* ngx_rtmp_netcall_module.c */,
+				5A5220511AF25C87003E7643 /* ngx_rtmp_netcall_module.h */,
+				5A5220521AF25C87003E7643 /* ngx_rtmp_notify_module.c */,
+				5A5220531AF25C87003E7643 /* ngx_rtmp_play_module.c */,
+				5A5220541AF25C87003E7643 /* ngx_rtmp_play_module.h */,
+				5A5220551AF25C87003E7643 /* ngx_rtmp_proxy_protocol.c */,
+				5A5220561AF25C87003E7643 /* ngx_rtmp_proxy_protocol.h */,
+				5A5220571AF25C87003E7643 /* ngx_rtmp_receive.c */,
+				5A5220581AF25C87003E7643 /* ngx_rtmp_record_module.c */,
+				5A5220591AF25C87003E7643 /* ngx_rtmp_record_module.h */,
+				5A52205A1AF25C87003E7643 /* ngx_rtmp_relay_module.c */,
+				5A52205B1AF25C87003E7643 /* ngx_rtmp_relay_module.h */,
+				5A52205C1AF25C87003E7643 /* ngx_rtmp_send.c */,
+				5A52205D1AF25C87003E7643 /* ngx_rtmp_shared.c */,
+				5A52205E1AF25C87003E7643 /* ngx_rtmp_stat_module.c */,
+				5A52205F1AF25C87003E7643 /* ngx_rtmp_streams.h */,
+				5A5220601AF25C87003E7643 /* ngx_rtmp_version.h */,
+				5A5220611AF25C87003E7643 /* ngx_rtmp.c */,
+				5A5220621AF25C87003E7643 /* ngx_rtmp.h */,
+				5A5220631AF25C87003E7643 /* README.md */,
+				5A5220641AF25C87003E7643 /* stat.xsl */,
+				5A5220651AF25C88003E7643 /* test */,
 			);
 			sourceTree = "<group>";
 		};
