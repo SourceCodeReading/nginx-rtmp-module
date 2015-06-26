@@ -1130,7 +1130,7 @@ ngx_rtmp_live_postconfiguration(ngx_conf_t *cf)
     *h = ngx_rtmp_live_av;
 
     /* chain handlers */
-
+	
     next_publish = ngx_rtmp_publish;
     ngx_rtmp_publish = ngx_rtmp_live_publish;
 

@@ -341,11 +341,14 @@ ngx_rtmp_block(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
         }
     }
 
-
+	/*初始化rtmp event*/
     if (ngx_rtmp_init_events(cf, cmcf) != NGX_OK) {
         return NGX_CONF_ERROR;
     }
-
+	
+	/*调用postconfigureation */
+	/*所有的NGINX_RTMP_MODULE 会通过该函数将自己的event处理函数
+	添加到event array里面*/
     for (m = 0; ngx_modules[m]; m++) {
         if (ngx_modules[m]->type != NGX_RTMP_MODULE) {
             continue;
@@ -362,6 +365,7 @@ ngx_rtmp_block(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 
     *cf = pcf;
 
+	//初始化event 处理回调
     if (ngx_rtmp_init_event_handlers(cf, cmcf) != NGX_OK) {
         return NGX_CONF_ERROR;
     }
@@ -432,6 +436,9 @@ ngx_rtmp_init_events(ngx_conf_t *cf, ngx_rtmp_core_main_conf_t *cmcf)
 {
     size_t                      n;
 
+	//初始化NGX_RTMP_MAX_EVENT 个 事件处理数组(只是分配内存)
+	//rtmp Msg 和 3个rtmp 辅助event,connect,handshake_done,disconnect
+	//共23个
     for(n = 0; n < NGX_RTMP_MAX_EVENT; ++n) {
         if (ngx_array_init(&cmcf->events[n], cf->pool, 1,
                 sizeof(ngx_rtmp_handler_pt)) != NGX_OK)
@@ -440,6 +447,7 @@ ngx_rtmp_init_events(ngx_conf_t *cf, ngx_rtmp_core_main_conf_t *cmcf)
         }
     }
 
+	//amf 事件处理 数组
     if (ngx_array_init(&cmcf->amf, cf->pool, 1,
                 sizeof(ngx_rtmp_amf_handler_t)) != NGX_OK)
     {
@@ -458,7 +466,8 @@ ngx_rtmp_init_event_handlers(ngx_conf_t *cf, ngx_rtmp_core_main_conf_t *cmcf)
     ngx_rtmp_amf_handler_t     *h;
     ngx_hash_key_t             *ha;
     size_t                      n, m;
-
+	
+	//将event分类处理,添加相应的回调
     static size_t               pm_events[] = {
         NGX_RTMP_MSG_CHUNK_SIZE,
         NGX_RTMP_MSG_ABORT,
@@ -479,7 +488,7 @@ ngx_rtmp_init_event_handlers(ngx_conf_t *cf, ngx_rtmp_core_main_conf_t *cmcf)
     /* init standard protocol events */
     for(n = 0; n < sizeof(pm_events) / sizeof(pm_events[0]); ++n) {
         eh = ngx_array_push(&cmcf->events[pm_events[n]]);
-        *eh = ngx_rtmp_protocol_message_handler;
+        *eh = ngx_rtmp_protocol_message_handler;  //ngx_rtmp_reciver.c
     }
 
     /* init amf events */
